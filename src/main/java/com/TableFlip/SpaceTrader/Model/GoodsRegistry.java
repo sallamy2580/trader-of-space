@@ -1,6 +1,4 @@
-package com.TableFlip.SpaceTrader.GameEntity;
-
-import com.TableFlip.SpaceTrader.Model.Good;
+package com.TableFlip.SpaceTrader.Model;
 
 import java.util.ArrayList;
 
@@ -27,6 +25,7 @@ public class GoodsRegistry {
         _goods.add(new Good("Narcotics", 2500).setContraband(true).setTech(true));
         _goods.add(new Good("Robots", 3500).setTech(true));
     }
+
     public static GoodsRegistry getInstance(){
         if (_instance!=null){
             return _instance;
@@ -36,5 +35,13 @@ public class GoodsRegistry {
             _instance=new GoodsRegistry();
             return _instance;
         }
+    }
+
+    public ArrayList<Good> getGoods() {
+        return _goods;
+    }
+
+    public void setGoods(ArrayList<Good> goods) {
+        _goods = goods;
     }
 }

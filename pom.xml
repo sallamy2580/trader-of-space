@@ -15,49 +15,45 @@
   </properties>
 
   <dependencies>
-    <dependency>
+      <dependency>
+          <groupId>com.intellij</groupId>
+          <artifactId>forms_rt</artifactId>
+          <version>6.0.5</version>
+      </dependency>
+      <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
-    <!--build>
-        <plugins>
-            <Hook into lifecycle!>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.1.1</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                        <configuration>
-                            <mainClass>com.TableFlip.SpaceTrader.Bootstrap.Bootstrapper</mainClass>
-                            <arguments>
-                                <argument>arg0</argument>
-                                <argument>arg1</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build-->
-    <profiles>
-        <profile>
-            <id>run</id>
             <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <configuration>
+                                <source>1.5</source>
+                                <target>1.5</target>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
+                        <artifactId>maven-jar-plugin</artifactId>
                         <configuration>
-                          <source>1.5</source>
-                          <target>1.5</target>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <mainClass>com.TableFlip.SpaceTrader.Bootstrap.Bootstrapper</mainClass>
+                                </manifest>
+                                <manifestEntries>
+                                    <mode>development</mode>
+                                </manifestEntries>
+                            </archive>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -66,22 +62,31 @@
                         <version>1.1.1</version>
                         <executions>
                             <execution>
-                                <phase>test</phase>
                                 <goals>
                                     <goal>java</goal>
                                 </goals>
-                                <configuration>
-                                    <mainClass>com.TableFlip.SpaceTrader.Bootstrap.Bootstrapper</mainClass>
-                                    <arguments>
-                                        <argument>arg0</argument>
-                                        <argument>arg1</argument>
-                                    </arguments>
-                                </configuration>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <mainClass>com.TableFlip.SpaceTrader.Bootstrap.Bootstrapper</mainClass>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-shade-plugin</artifactId>
+                        <version>2.0</version>
+                        <configuration>
+                            <!-- put your configurations here -->
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>shade</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-    </profiles>
 </project>

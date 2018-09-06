@@ -1,9 +1,7 @@
 package com.TableFlip.SpaceTrader.Bootstrap;
 
-import com.TableFlip.SpaceTrader.GameEntity.GoodsRegistry;
-import com.TableFlip.SpaceTrader.Model.Good;
-
-import java.util.ArrayList;
+import GUI.HelloWorld;
+import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,5 +13,6 @@ import java.util.ArrayList;
 public class Bootstrapper {
     public static void main(String[] args){
         GoodsRegistry goods= GoodsRegistry.getInstance();
+        HelloWorld.main(args);
     }
 }
