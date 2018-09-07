@@ -1,5 +1,7 @@
 package com.TableFlip.SpaceTrader.Bootstrap;
 
+import GUI.CharGen;
+import GUI.GetNamePopUp;
 import GUI.HelloWorld;
 import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
 
@@ -13,6 +15,6 @@ import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
 public class Bootstrapper {
     public static void main(String[] args){
         GoodsRegistry goods= GoodsRegistry.getInstance();
-        HelloWorld.main(args);
+        CharGen.main(args);
     }
 }

@@ -31,7 +31,6 @@ public class GoodsRegistry {
             return _instance;
         }
         else{
-            System.out.println("Making new Goods Registry");
             _instance=new GoodsRegistry();
             return _instance;
         }

@@ -15,5 +15,4 @@ public class Ship {
     public void fly(){
         //TODO
     }
-
 }

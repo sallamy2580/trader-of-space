@@ -24,31 +24,35 @@ public class Player {
         return _stats;
     }
 
-    public void setStats(Map<Enums.Skill, Integer> stats) {
+    public Player setStats(Map<Enums.Skill, Integer> stats) {
         _stats = stats;
+        return this;
     }
 
     public String getName() {
         return _name;
     }
 
-    public void setName(String name) {
+    public Player setName(String name) {
         _name = name;
+        return this;
     }
 
     public Ship getShip() {
         return _ship;
     }
 
-    public void setShip(Ship ship) {
+    public Player setShip(Ship ship) {
         _ship = ship;
+        return this;
     }
 
     public int getCredits() {
         return _credits;
     }
 
-    public void setCredits(int credits) {
+    public Player setCredits(int credits) {
         _credits = credits;
+        return this;
     }
 }
