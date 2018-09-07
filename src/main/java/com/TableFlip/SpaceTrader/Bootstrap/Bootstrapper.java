@@ -4,6 +4,7 @@ import GUI.CharGen;
 import GUI.GetNamePopUp;
 import GUI.HelloWorld;
 import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
+import com.TableFlip.SpaceTrader.Model.PlanetNames;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,5 +17,8 @@ public class Bootstrapper {
     public static void main(String[] args){
         GoodsRegistry goods= GoodsRegistry.getInstance();
         CharGen.main(args);
+    }
+    public void generateGalaxy(){
+          String[] _planetNames= PlanetNames.getInstance().getPlanetNames();
     }
 }

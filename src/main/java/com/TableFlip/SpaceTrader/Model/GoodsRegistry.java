@@ -14,16 +14,56 @@ public class GoodsRegistry {
     private static GoodsRegistry _instance;
     private GoodsRegistry(){
         _goods=new ArrayList<Good>();
-        _goods.add(new Good("Water", 30).setConsumable(true));
-        _goods.add(new Good("Furs", 230));
-        _goods.add(new Good("Food",100).setConsumable(true));
-        _goods.add(new Good("Ore", 350));
-        _goods.add(new Good("Games", 250));
-        _goods.add(new Good("Firearms", 1000).setContraband(true).setTech(true));
-        _goods.add(new Good("Medicine", 500).setTech(true));
-        _goods.add(new Good("Machines", 700).setTech(true));
-        _goods.add(new Good("Narcotics", 2500).setContraband(true).setTech(true));
-        _goods.add(new Good("Robots", 3500).setTech(true));
+        _goods.add(new Good("Water", 30)
+                .addResourcesModifiers(Enums.Resources.DESERT,3)
+                .addResourcesModifiers(Enums.Resources.LOTSOFWATER,-3)
+        );
+        _goods.add(new Good("Furs", 230)
+                .addResourcesModifiers(Enums.Resources.WARLIKE,1)
+                .addResourcesModifiers(Enums.Resources.RICHFAUNA,-3)
+                .lowTech()
+        );
+        _goods.add(new Good("Food", 100)
+                .addResourcesModifiers(Enums.Resources.POORSOIL, 3)
+                .addResourcesModifiers(Enums.Resources.RICHSOIL, -3)
+                .addResourcesModifiers(Enums.Resources.RICHFAUNA, -3)
+                .lowTech()
+        );
+        _goods.add(new Good("Ore", 350)
+                .addResourcesModifiers(Enums.Resources.MINERALRICH, -3)
+                .addResourcesModifiers(Enums.Resources.MINERALPOOR, 3)
+        );
+        _goods.add(new Good("Games", 250)
+                .addResourcesModifiers(Enums.Resources.ARTISTIC, 2)
+                .addResourcesModifiers(Enums.Resources.WARLIKE, -3)
+                .highTech()
+        );
+        _goods.add(new Good("Firearms", 1000)
+                .addResourcesModifiers(Enums.Resources.ARTISTIC, -3)
+                .addResourcesModifiers(Enums.Resources.WARLIKE, 3)
+        );
+        _goods.add(new Good("Medicine", 500)
+                .addResourcesModifiers(Enums.Resources.WARLIKE, 3)
+                .addResourcesModifiers(Enums.Resources.WEIRDMUSHROOMS, -2)
+                .addResourcesModifiers(Enums.Resources.LOTSOFHERBS, -3)
+                .lowTech()
+        );
+        _goods.add(new Good("Machines", 700)
+                .lowTech()
+        );
+        _goods.add(new Good("Narcotics", 2500)
+                .addResourcesModifiers(Enums.Resources.LOTSOFHERBS, -1)
+                .addResourcesModifiers(Enums.Resources.WEIRDMUSHROOMS, -2)
+                .addResourcesModifiers(Enums.Resources.ARTISTIC, 1)
+                .addResourcesModifiers(Enums.Resources.WARLIKE, -1)
+                .highTech()
+        );
+        _goods.add(new Good("Robots", 3500)
+                .addResourcesModifiers(Enums.Resources.MINERALRICH, -1)
+                .addResourcesModifiers(Enums.Resources.MINERALPOOR, 1)
+                .addResourcesModifiers(Enums.Resources.WARLIKE, 1)
+                .lowTech()
+        );
     }
 
     public static GoodsRegistry getInstance(){

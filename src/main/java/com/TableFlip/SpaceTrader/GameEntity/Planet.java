@@ -1,5 +1,6 @@
 package com.TableFlip.SpaceTrader.GameEntity;
 
+import com.TableFlip.SpaceTrader.Model.Enums;
 import com.TableFlip.SpaceTrader.Model.Good;
 import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
 
@@ -17,6 +18,33 @@ import java.util.Map;
 public class Planet {
     GoodsRegistry _goodsRegistry=GoodsRegistry.getInstance();
     Map<Good, Integer> _localValues;
+    Enums.Resources _resources;
+
+    public Enums.Resources getResources() {
+        return _resources;
+    }
+
+    public void setResources(Enums.Resources resources) {
+        _resources = resources;
+    }
+
+    public Enums.TechLevel getTechLevel() {
+        return _techLevel;
+    }
+
+    public void setTechLevel(Enums.TechLevel techLevel) {
+        _techLevel = techLevel;
+    }
+
+    public Map<Good, Integer> getLocalValues() {
+        return _localValues;
+    }
+
+    public void setLocalValues(Map<Good, Integer> localValues) {
+        _localValues = localValues;
+    }
+
+    Enums.TechLevel _techLevel;
     public Planet(){
         _localValues=new HashMap<Good, Integer>();
         //Set up local costs for goods
