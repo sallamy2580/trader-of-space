@@ -15,14 +15,23 @@ import java.util.List;
 public class Galaxy {
     List<Planet> _planets;
 
-    public Galaxy getInstance() {
-        return _instance;
+    public static Galaxy getInstance() {
+        if (_instance==null){
+            System.out.println("New Galaxy!");
+            _instance=new Galaxy();
+            return _instance;
+        }
+        else{
+            return _instance;
+        }
+
     }
 
-    Galaxy _instance;
+    private static Galaxy _instance;
     private Galaxy(){
         _planets=new ArrayList<Planet>();
         for (String planetName : PlanetNames.getInstance().getPlanetNames()){
+            System.out.println("Galaxy is adding planet named "+planetName);
             _planets.add(new RandomPlanet(planetName));
         }
     }

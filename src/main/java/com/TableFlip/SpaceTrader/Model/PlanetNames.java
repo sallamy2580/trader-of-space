@@ -19,7 +19,7 @@ public class PlanetNames {
     private String[] _planetNames;
     private static PlanetNames _instance;
     private PlanetNames(){
-        String[] _planetNames=new String[]{
+        String[] planetNames=new String[]{
                 "Acamar",
                 "Adahn",		// The alternate personality for The Nameless One in "Planescape: Torment"
                 "Aldea",
@@ -141,6 +141,8 @@ public class PlanetNames {
                 "Zalkon",
                 "Zuul"			// From the first Ghostbusters movie
         };
+        System.out.println("Array declared");
+        _planetNames=planetNames;
     }
     public static PlanetNames getInstance(){
         if (_instance==null){

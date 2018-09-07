@@ -34,7 +34,7 @@ public class CharGen {
         $$$setupUI$$$();
         _submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if ((_currentTotal > 0) || (_textField1.getText().length() == 0)) {
+                if ((_currentTotal != 0) || (_textField1.getText().length() == 0)) {
                     return;
                 }
                 GuiArbiter.newCharacter(_textField1.getText(), _pilotSkill, _fighterSkill, _traderSkill, _engineerSkill);

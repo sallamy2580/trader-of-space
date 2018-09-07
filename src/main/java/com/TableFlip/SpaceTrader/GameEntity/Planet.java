@@ -19,6 +19,7 @@ public class Planet {
     GoodsRegistry _goodsRegistry=GoodsRegistry.getInstance();
     Map<Good, Integer> _localValues;
     Enums.Resources _resources;
+    private String _name;
 
     public Enums.Resources getResources() {
         return _resources;
@@ -52,5 +53,13 @@ public class Planet {
             _localValues.put(good, good.getBaseCost()); //TODO: Make cost change from planet to planet based on some parameters
         }
 
+    }
+
+    public String getName() {
+        return _name;
+    }
+
+    public void setName(String name) {
+        _name = name;
     }
 }

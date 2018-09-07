@@ -1,5 +1,6 @@
 package com.TableFlip.SpaceTrader.Model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -14,13 +15,24 @@ public class Good {
     private int _baseCost;
     private Map<Enums.TechLevel, Integer> _techModifiers;
     private Map<Enums.Resources, Integer> _resourcesModifiers;
+    private Enums.TechLevel techCutOff;
 
     public Good(String name, int baseCost){
         _name=name;
         _baseCost=baseCost;
+        _techModifiers=new HashMap<Enums.TechLevel, Integer>();
+        _resourcesModifiers=new HashMap<Enums.Resources, Integer>();
     }
     public int getBias(Enums.Resources resources, Enums.TechLevel techLevel){
-        return _techModifiers.get(techLevel)+_resourcesModifiers.get(resources);
+        int resource=0;
+        int tech=0;
+        if (_resourcesModifiers.get(resources)!=null){
+            resource=_resourcesModifiers.get(resources);
+        }
+        if (_techModifiers.get(techLevel)!=null){
+            tech=_techModifiers.get(techLevel);
+        }
+        return tech+resource;
     }
     public int getBaseCost() {
         return _baseCost;
@@ -75,6 +87,15 @@ public class Good {
         _techModifiers.put(Enums.TechLevel.INDUSTRIAL,1);
         _techModifiers.put(Enums.TechLevel.POSTINDUSTRIAL,2);
         _techModifiers.put(Enums.TechLevel.HITECH,3);
+        return this;
+    }
+
+    public Enums.TechLevel getTechCutOff() {
+        return techCutOff;
+    }
+
+    public Good setTechCutOff(Enums.TechLevel techCutOff) {
+        this.techCutOff = techCutOff;
         return this;
     }
 }

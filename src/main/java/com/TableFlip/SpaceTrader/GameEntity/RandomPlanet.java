@@ -1,5 +1,9 @@
 package com.TableFlip.SpaceTrader.GameEntity;
 
+import com.TableFlip.SpaceTrader.Model.Enums;
+
+import java.util.Random;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ben
@@ -9,6 +13,10 @@ package com.TableFlip.SpaceTrader.GameEntity;
  */
 public class RandomPlanet extends Planet {
     public RandomPlanet(String name){
-        super();
+        setName(name);
+        setResources(Enums.Resources.WARLIKE);
+        setTechLevel(Enums.TechLevel.INDUSTRIAL);
+        System.out.println("Generating planet named: "+name);
+        setLocalValues(PriceGenerator.getInstance().generatePrices(this).getLocalValues());
     }
 }

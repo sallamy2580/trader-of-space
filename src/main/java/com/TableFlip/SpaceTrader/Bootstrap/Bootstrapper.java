@@ -3,6 +3,7 @@ package com.TableFlip.SpaceTrader.Bootstrap;
 import GUI.CharGen;
 import GUI.GetNamePopUp;
 import GUI.HelloWorld;
+import com.TableFlip.SpaceTrader.GameEntity.Galaxy;
 import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
 import com.TableFlip.SpaceTrader.Model.PlanetNames;
 
@@ -18,7 +19,8 @@ public class Bootstrapper {
         GoodsRegistry goods= GoodsRegistry.getInstance();
         CharGen.main(args);
     }
-    public void generateGalaxy(){
-          String[] _planetNames= PlanetNames.getInstance().getPlanetNames();
+    public static void generateGalaxy(){
+        System.out.println("Generating galaxy.");
+        Galaxy galaxy=Galaxy.getInstance();
     }
 }

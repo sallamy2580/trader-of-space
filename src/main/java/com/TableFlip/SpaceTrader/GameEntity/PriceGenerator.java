@@ -22,10 +22,16 @@ public class PriceGenerator {
     }
 
     public static PriceGenerator getInstance() {
-        return _instance;
+        if (_instance==null){
+            _instance=new PriceGenerator();
+            return _instance;
+        }
+        else{
+            return _instance;
+        }
     }
 
-    public Planet generatePrices(Planet planet){
+    public RandomPlanet generatePrices(RandomPlanet planet){
         Map<Good, Integer> values=new HashMap<Good, Integer>();
         for (Good good : _goodsRegistry.getGoods()){
             int bias = good.getBias(planet.getResources(), planet.getTechLevel());
@@ -39,6 +45,9 @@ public class PriceGenerator {
         return planet;
     }
     private Map<Good, Integer> filterGoods(Map<Good, Integer> candidateValues){
-
+        for (Good good : candidateValues.keySet()){
+            System.out.println(good.getName());
+        }
+        return candidateValues;
     }
 }

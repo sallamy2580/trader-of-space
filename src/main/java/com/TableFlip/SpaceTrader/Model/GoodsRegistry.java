@@ -41,14 +41,17 @@ public class GoodsRegistry {
         _goods.add(new Good("Firearms", 1000)
                 .addResourcesModifiers(Enums.Resources.ARTISTIC, -3)
                 .addResourcesModifiers(Enums.Resources.WARLIKE, 3)
+                .setTechCutOff(Enums.TechLevel.INDUSTRIAL)
         );
         _goods.add(new Good("Medicine", 500)
                 .addResourcesModifiers(Enums.Resources.WARLIKE, 3)
                 .addResourcesModifiers(Enums.Resources.WEIRDMUSHROOMS, -2)
                 .addResourcesModifiers(Enums.Resources.LOTSOFHERBS, -3)
+                .setTechCutOff(Enums.TechLevel.INDUSTRIAL)
                 .lowTech()
         );
         _goods.add(new Good("Machines", 700)
+                .setTechCutOff(Enums.TechLevel.INDUSTRIAL)
                 .lowTech()
         );
         _goods.add(new Good("Narcotics", 2500)
@@ -56,12 +59,14 @@ public class GoodsRegistry {
                 .addResourcesModifiers(Enums.Resources.WEIRDMUSHROOMS, -2)
                 .addResourcesModifiers(Enums.Resources.ARTISTIC, 1)
                 .addResourcesModifiers(Enums.Resources.WARLIKE, -1)
+                .setTechCutOff(Enums.TechLevel.POSTINDUSTRIAL)
                 .highTech()
         );
         _goods.add(new Good("Robots", 3500)
                 .addResourcesModifiers(Enums.Resources.MINERALRICH, -1)
                 .addResourcesModifiers(Enums.Resources.MINERALPOOR, 1)
                 .addResourcesModifiers(Enums.Resources.WARLIKE, 1)
+                .setTechCutOff(Enums.TechLevel.HITECH)
                 .lowTech()
         );
     }
