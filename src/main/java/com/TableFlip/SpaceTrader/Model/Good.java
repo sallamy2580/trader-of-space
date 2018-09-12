@@ -69,7 +69,7 @@ public class Good {
         _resourcesModifiers.put(resource, modifier);
         return this;
     }
-    public Good lowTech(){
+    public Good expensiveWhenLowTech(){
         _techModifiers.put(Enums.TechLevel.PREAGRICULTURE, 3);
         _techModifiers.put(Enums.TechLevel.AGRICULTURE,2);
         _techModifiers.put(Enums.TechLevel.MIDIEVAL,1);
@@ -79,7 +79,7 @@ public class Good {
         _techModifiers.put(Enums.TechLevel.HITECH,-3);
         return this;
     }
-    public Good highTech(){
+    public Good expensiveWhenHighTech(){
         _techModifiers.put(Enums.TechLevel.PREAGRICULTURE, -3);
         _techModifiers.put(Enums.TechLevel.AGRICULTURE,-2);
         _techModifiers.put(Enums.TechLevel.MIDIEVAL,-1);

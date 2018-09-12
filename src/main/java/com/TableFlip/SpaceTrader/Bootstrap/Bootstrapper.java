@@ -1,11 +1,8 @@
 package com.TableFlip.SpaceTrader.Bootstrap;
 
 import GUI.CharGen;
-import GUI.GetNamePopUp;
-import GUI.HelloWorld;
 import com.TableFlip.SpaceTrader.GameEntity.Galaxy;
-import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
-import com.TableFlip.SpaceTrader.Model.PlanetNames;
+import com.TableFlip.SpaceTrader.Service.GoodsRegistry;
 
 /**
  * Created with IntelliJ IDEA.

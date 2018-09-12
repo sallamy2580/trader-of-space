@@ -1,6 +1,8 @@
 package com.TableFlip.SpaceTrader.GameEntity;
 
 import com.TableFlip.SpaceTrader.Model.Enums;
+import com.TableFlip.SpaceTrader.Model.Planet;
+import com.TableFlip.SpaceTrader.Service.PriceGenerator;
 
 import java.util.Random;
 
@@ -13,10 +15,11 @@ import java.util.Random;
  */
 public class RandomPlanet extends Planet {
     public RandomPlanet(String name){
+        Random random=new Random();
         setName(name);
-        setResources(Enums.Resources.WARLIKE);
-        setTechLevel(Enums.TechLevel.INDUSTRIAL);
-        System.out.println("Generating planet named: "+name);
-        setLocalValues(PriceGenerator.getInstance().generatePrices(this).getLocalValues());
+        setTechLevel(Enums.TechLevel.values()[random.nextInt(Enums.TechLevel.values().length)]);
+        setResources(Enums.Resources.values()[random.nextInt(Enums.Resources.values().length)]);
+        System.out.println("Generating planet named: " + name);
+        setLocalPrices(PriceGenerator.getInstance().generatePrices(this).getLocalValues());
     }
 }

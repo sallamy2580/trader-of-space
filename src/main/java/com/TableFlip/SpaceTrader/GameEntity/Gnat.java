@@ -1,5 +1,7 @@
 package com.TableFlip.SpaceTrader.GameEntity;
 
+import com.TableFlip.SpaceTrader.Model.Ship;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ben

@@ -1,4 +1,7 @@
-package com.TableFlip.SpaceTrader.Model;
+package com.TableFlip.SpaceTrader.Service;
+
+import com.TableFlip.SpaceTrader.Model.Enums;
+import com.TableFlip.SpaceTrader.Model.Good;
 
 import java.util.ArrayList;
 
@@ -21,13 +24,13 @@ public class GoodsRegistry {
         _goods.add(new Good("Furs", 230)
                 .addResourcesModifiers(Enums.Resources.WARLIKE,1)
                 .addResourcesModifiers(Enums.Resources.RICHFAUNA,-3)
-                .lowTech()
+                .expensiveWhenLowTech()
         );
         _goods.add(new Good("Food", 100)
                 .addResourcesModifiers(Enums.Resources.POORSOIL, 3)
                 .addResourcesModifiers(Enums.Resources.RICHSOIL, -3)
                 .addResourcesModifiers(Enums.Resources.RICHFAUNA, -3)
-                .lowTech()
+                .expensiveWhenLowTech()
         );
         _goods.add(new Good("Ore", 350)
                 .addResourcesModifiers(Enums.Resources.MINERALRICH, -3)
@@ -36,7 +39,7 @@ public class GoodsRegistry {
         _goods.add(new Good("Games", 250)
                 .addResourcesModifiers(Enums.Resources.ARTISTIC, 2)
                 .addResourcesModifiers(Enums.Resources.WARLIKE, -3)
-                .highTech()
+                .expensiveWhenHighTech()
         );
         _goods.add(new Good("Firearms", 1000)
                 .addResourcesModifiers(Enums.Resources.ARTISTIC, -3)
@@ -48,11 +51,11 @@ public class GoodsRegistry {
                 .addResourcesModifiers(Enums.Resources.WEIRDMUSHROOMS, -2)
                 .addResourcesModifiers(Enums.Resources.LOTSOFHERBS, -3)
                 .setTechCutOff(Enums.TechLevel.INDUSTRIAL)
-                .lowTech()
+                .expensiveWhenLowTech()
         );
         _goods.add(new Good("Machines", 700)
                 .setTechCutOff(Enums.TechLevel.INDUSTRIAL)
-                .lowTech()
+                .expensiveWhenLowTech()
         );
         _goods.add(new Good("Narcotics", 2500)
                 .addResourcesModifiers(Enums.Resources.LOTSOFHERBS, -1)
@@ -60,14 +63,14 @@ public class GoodsRegistry {
                 .addResourcesModifiers(Enums.Resources.ARTISTIC, 1)
                 .addResourcesModifiers(Enums.Resources.WARLIKE, -1)
                 .setTechCutOff(Enums.TechLevel.POSTINDUSTRIAL)
-                .highTech()
+                .expensiveWhenHighTech()
         );
         _goods.add(new Good("Robots", 3500)
                 .addResourcesModifiers(Enums.Resources.MINERALRICH, -1)
                 .addResourcesModifiers(Enums.Resources.MINERALPOOR, 1)
                 .addResourcesModifiers(Enums.Resources.WARLIKE, 1)
                 .setTechCutOff(Enums.TechLevel.HITECH)
-                .lowTech()
+                .expensiveWhenLowTech()
         );
     }
 

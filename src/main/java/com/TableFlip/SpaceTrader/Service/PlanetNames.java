@@ -1,4 +1,4 @@
-package com.TableFlip.SpaceTrader.Model;
+package com.TableFlip.SpaceTrader.Service;
 
 /**
  * Created with IntelliJ IDEA.
@@ -141,7 +141,6 @@ public class PlanetNames {
                 "Zalkon",
                 "Zuul"			// From the first Ghostbusters movie
         };
-        System.out.println("Array declared");
         _planetNames=planetNames;
     }
     public static PlanetNames getInstance(){

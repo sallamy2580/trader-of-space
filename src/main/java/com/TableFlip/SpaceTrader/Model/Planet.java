@@ -1,11 +1,7 @@
-package com.TableFlip.SpaceTrader.GameEntity;
+package com.TableFlip.SpaceTrader.Model;
 
-import com.TableFlip.SpaceTrader.Model.Enums;
-import com.TableFlip.SpaceTrader.Model.Good;
-import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
+import com.TableFlip.SpaceTrader.Service.GoodsRegistry;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,11 +11,12 @@ import java.util.Map;
  * Time: 2:44 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Planet {
+public class Planet{
     GoodsRegistry _goodsRegistry=GoodsRegistry.getInstance();
     Map<Good, Integer> _localValues;
     Enums.Resources _resources;
     private String _name;
+    private Coordinates _coordinates;
 
     public Enums.Resources getResources() {
         return _resources;
@@ -41,18 +38,13 @@ public class Planet {
         return _localValues;
     }
 
-    public void setLocalValues(Map<Good, Integer> localValues) {
+    public void setLocalPrices(Map<Good, Integer> localValues) {
         _localValues = localValues;
     }
 
     Enums.TechLevel _techLevel;
     public Planet(){
-        _localValues=new HashMap<Good, Integer>();
-        //Set up local costs for goods
-        for (Good good : _goodsRegistry.getGoods()){
-            _localValues.put(good, good.getBaseCost()); //TODO: Make cost change from planet to planet based on some parameters
-        }
-
+       //Do nothing
     }
 
     public String getName() {
@@ -61,5 +53,13 @@ public class Planet {
 
     public void setName(String name) {
         _name = name;
+    }
+
+    public Coordinates getCoordinates() {
+        return _coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        _coordinates = coordinates;
     }
 }

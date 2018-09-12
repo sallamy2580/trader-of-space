@@ -1,4 +1,6 @@
-package com.TableFlip.SpaceTrader.GameEntity;
+package com.TableFlip.SpaceTrader.Model;
+
+import com.TableFlip.SpaceTrader.Model.Planet;
 
 /**
  * Created with IntelliJ IDEA.

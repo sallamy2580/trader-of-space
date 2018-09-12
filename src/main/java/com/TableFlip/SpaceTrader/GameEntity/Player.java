@@ -1,6 +1,7 @@
 package com.TableFlip.SpaceTrader.GameEntity;
 
 import com.TableFlip.SpaceTrader.Model.Enums;
+import com.TableFlip.SpaceTrader.Model.Ship;
 
 import java.util.Map;
 

@@ -1,7 +1,7 @@
-package com.TableFlip.SpaceTrader.GameEntity;
+package com.TableFlip.SpaceTrader.Service;
 
+import com.TableFlip.SpaceTrader.GameEntity.RandomPlanet;
 import com.TableFlip.SpaceTrader.Model.Good;
-import com.TableFlip.SpaceTrader.Model.GoodsRegistry;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,12 +41,12 @@ public class PriceGenerator {
             values.put(good, good.getBaseCost()+biasAdjust);
         }
         values=filterGoods(values);
-        planet.setLocalValues(values);
+        planet.setLocalPrices(values);
         return planet;
     }
     private Map<Good, Integer> filterGoods(Map<Good, Integer> candidateValues){
         for (Good good : candidateValues.keySet()){
-            System.out.println(good.getName());
+            //System.out.println(good.getName());
         }
         return candidateValues;
     }

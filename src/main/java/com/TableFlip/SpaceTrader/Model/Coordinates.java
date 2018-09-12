@@ -30,4 +30,22 @@ public class Coordinates {
     public void setyPos(int yPos) {
         _yPos = yPos;
     }
+    public int hashCode(){
+        return 1000*_xPos+_yPos;
+    }
+    public boolean equals(Object other){
+        try {
+            Coordinates otherCoord=(Coordinates) other;
+            if ((otherCoord.getxPos()==_xPos)&&(otherCoord.getyPos()==_yPos)){
+                return true;
+            }
+            return false;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+    public String toString(){
+        return "Planet is located at x: "+_xPos+" and y: "+_yPos;
+    }
 }
