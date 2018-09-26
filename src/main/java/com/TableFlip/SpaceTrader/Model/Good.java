@@ -72,7 +72,7 @@ public class Good {
     public Good expensiveWhenLowTech(){
         _techModifiers.put(Enums.TechLevel.PREAGRICULTURE, 3);
         _techModifiers.put(Enums.TechLevel.AGRICULTURE,2);
-        _techModifiers.put(Enums.TechLevel.MIDIEVAL,1);
+        _techModifiers.put(Enums.TechLevel.MEDIEVAL,1);
         _techModifiers.put(Enums.TechLevel.RENAISSANCE,0);
         _techModifiers.put(Enums.TechLevel.INDUSTRIAL,-1);
         _techModifiers.put(Enums.TechLevel.POSTINDUSTRIAL,-2);
@@ -82,7 +82,7 @@ public class Good {
     public Good expensiveWhenHighTech(){
         _techModifiers.put(Enums.TechLevel.PREAGRICULTURE, -3);
         _techModifiers.put(Enums.TechLevel.AGRICULTURE,-2);
-        _techModifiers.put(Enums.TechLevel.MIDIEVAL,-1);
+        _techModifiers.put(Enums.TechLevel.MEDIEVAL,-1);
         _techModifiers.put(Enums.TechLevel.RENAISSANCE,0);
         _techModifiers.put(Enums.TechLevel.INDUSTRIAL,1);
         _techModifiers.put(Enums.TechLevel.POSTINDUSTRIAL,2);
