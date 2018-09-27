@@ -75,7 +75,7 @@ public class Galaxy {
     private Galaxy(){
         setUniverseHeight(150);
         setUniverseWidth(150);
-        _planets=new ArrayList<Planet>();
+        _planets =new ArrayList<Planet>();
         for (String planetName : PlanetNames.getInstance().getPlanetNames()){
             _planets.add(new RandomPlanet(planetName));
         }
