@@ -36,7 +36,6 @@ public class PlanetNames {
                 "Castor",		// A Greek demi-god
                 "Cestus",
                 "Cheron",
-                "Courteney",	// After Courteney Cox…
                 "Daled",
                 "Damast",
                 "Davlos",
